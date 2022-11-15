@@ -10,12 +10,12 @@
     <title>Siwek</title>
 </head>
 
-<body>
+<body id="body">
     <div class="postacie">
-        <img src="https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_walter-white-lg.jpg" class="zdj">
-        <h1 class="imie">IMIE</h1>
-        <h2 class="data">DATA</h2>
-        <h2 class="nick">NICK</h2>
+        <img src="" class="zdj">
+        <h1 class="imie"></h1>
+        <h2 class="data"></h2>
+        <h2 class="nick"></h2>
     </div>
 
 
@@ -28,7 +28,18 @@
 
             const json = await data.json()
             console.log(json)
-            document.getElementsByClassName("zdj")
+            document.getElementsByClassName("zdj")[0].setAttribute("src", json[4].img)
+            document.getElementsByClassName("imie")[0].innerHTML = json[4].name
+            document.getElementsByClassName("nick")[0].innerHTML = json[4].nickname
+            document.getElementsByClassName("data")[0].innerHTML = json[4].birthday
+
+            const body = document.getElementById("body")
+
+            for (var i = 0; i <= json.length; i++) {
+                const postacie = document.createElement("div")
+                postacie.classList.add("postacie")
+                body.appendChild(postacie)
+            }
         }
         getData()
     </script>

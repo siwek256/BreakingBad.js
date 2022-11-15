@@ -19,3 +19,20 @@
 .nick {
     text-align: center;
 }
+
+h1 {
+    color: magenta;
+    background-color: blueviolet;
+}
+
+h2 {
+    color: blueviolet;
+    background-color: magenta;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+}
