@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="refresh" content="1">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siwek</title>
+</head>
+
+<body>
+    <div class="postacie">
+        <img src="https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_walter-white-lg.jpg" class="zdj">
+        <h1 class="imie">IMIE</h1>
+        <h2 class="data">DATA</h2>
+        <h2 class="nick">NICK</h2>
+    </div>
+
+
+
+
+    <script>
+        async function getData() {
+            const data = await fetch("https://www.breakingbadapi.com/api/characters")
+                // const data = await fetch("https://api.kanye.rest")
+
+            const json = await data.json()
+            console.log(json)
+            document.getElementsByClassName("zdj")
+        }
+        getData()
+    </script>
+</body>
+
+</html>
