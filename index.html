@@ -3,7 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="style.css">
-    <meta http-equiv="refresh" content="1">
+    <meta http-equiv="refresh" content="5">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,9 +35,31 @@
 
             const body = document.getElementById("body")
 
-            for (var i = 0; i <= json.length; i++) {
+            for (var i = 0; i < json.length; i++) {
                 const postacie = document.createElement("div")
                 postacie.classList.add("postacie")
+
+                const img = document.createElement("img")
+                img.setAttribute("src", json[i].img)
+                img.classList.add("zdj")
+
+                const imie = document.createElement("h2")
+                imie.innerHTML = [json[i].name]
+                imie.classList.add("imie")
+
+                const data = document.createElement("h2")
+                data.innerHTML = [json[i].birthday]
+                data.classList.add("data")
+
+                const nick = document.createElement("h2")
+                nick.innerHTML = [json[i].nickname]
+                nick.classList.add("nick")
+
+
+                postacie.appendChild(img)
+                postacie.appendChild(imie)
+                postacie.appendChild(data)
+                postacie.appendChild(nick)
                 body.appendChild(postacie)
             }
         }
